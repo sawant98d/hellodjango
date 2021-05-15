@@ -5,3 +5,14 @@ from django.http import HttpResponse
 def greeting(request):
     s = "<h1>Hello and welcome to the first view of testapp</h1>"
     return HttpResponse(s)
+
+def showContact(request):
+    s = "<h1>Contact Page</h1>"
+    s += "<p>website: abc.com</p>"
+    s += "<p>Contact: 987654321</p>"
+    s += "<p>Email: abc@gmail.com</p>"
+    return HttpResponse(s)
+
+def about(request):
+    s = "<h1>This is an about page</h1>"
+    return HttpResponse(s)
