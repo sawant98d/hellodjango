@@ -8,5 +8,6 @@ def showResult(request):
     return HttpResponse(s)
 
 def showTest(request):
-    s = "<h1>This is show TEST page</h1>"
-    return HttpResponse(s)
+    #s = "<h1>This is show TEST page</h1>"
+    res = render(request, 'exam/test.htm')
+    return res
