@@ -1,3 +1,6 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +8,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test app</title>
+    <link rel="stylesheet" href="{%static 'css/teststyle.css'%}">
 </head>
 <body>
-    <h1>TEST PAPER GK</h1>
-    <div>
-        <h2>Where is Mumbai?</h2>
-        <input type="radio" name='answer'>Andra Pradesh<br>
-        <input type="radio" name='answer'>Gujrat<br>
-        <input type="radio" name='answer'>Maharashtra<br>
-        <input type="radio" name='answer'>Rajastan<br>
-        <input type="radio" name='answer'>Madya Pradesh<br>
+    <div class="heading">
+        <h1>Hello Guest</h1>
+        <h2>TEST PAPER GK</h2>
     </div>
-    <input type="submit">
+    <div class="questionblock">
+            <div class="que">
+                <h2>Where is Mumbai?</h2>
+            </div>
+            <div class="option">
+                <input type="radio" name='answer'><span>Andra Pradesh</span>
+            </div>
+            <div class="option">
+                <input type="radio" name='answer'><span>Gujrat</span>
+            </div>
+            <div class="option">
+                <input type="radio" name='answer'><span>Maharashtra</span>
+            </div>
+            
+            <div class="option">
+                <input type="radio" name='answer'><span>Rajastan</span>
+            </div>
+            
+            <div class="option">
+                <input type="radio" name='answer'><span>Madya Pradesh</span>
+            </div>
+            <div class="submit">
+                <input type="submit">
+            </div>
+    </div>
+    
 </body>
 </html>
