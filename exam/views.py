@@ -16,7 +16,8 @@ def showTest(request):
     c = "Maharashtra"
     d = "Rajastan"
     e = "KARNATAKA"
+    level = "EASY"
     data = {'que':que, 'a':a, 'b':b, 'c':c, 'd':d, 
-    'e':e}
+    'e':e, 'level':level}
     res = render(request, 'exam/test.htm', context=data)
     return res
