@@ -6,3 +6,10 @@ register = template.Library()
 def get_date():
     now = datetime.datetime.now()
     return now
+
+
+
+@register.filter
+def quotes(value):
+    s = '"'+str(value)+'"'
+    return s

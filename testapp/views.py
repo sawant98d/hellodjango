@@ -16,6 +16,6 @@ def showContact(request):
 def about(request):
     #s = "<h1>This is an about page</h1>"
     #l = [10,20,30]
-    #data = {'msg':'this is about page of project', 'l':l}
-    res = render(request, 'testapp/about.htm')
+    data = {'msg':'this is message from views.py lol for quote filter test purpose'}
+    res = render(request, 'testapp/about.htm', data)
     return res

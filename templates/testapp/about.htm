@@ -8,9 +8,7 @@
 </head>
 <body>
     {% load apps_tag %}
-    {% get_date as today %}
-    <h1>Today's date is {{today}}</h1>
-    <h1>Today's date is {{today| date:"D"}}</h1>
+    <h1>value from the python views->{{msg | quotes}}</h1>
     
 </body>
 </html>
