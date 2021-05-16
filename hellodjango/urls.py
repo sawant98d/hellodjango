@@ -22,7 +22,7 @@ from exam import views as exam_views
 urlpatterns = [
     url('testapp/', include('testapp.urls')),
     url('exam/', include('exam.urls')),
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     #path('home/', testapp_views.greeting),
     #path('about/', testapp_views.about),
     #path('contact/',testapp_views.showContact),
