@@ -7,14 +7,10 @@
     <title>about page of project t</title>
 </head>
 <body>
-    <h1>{{msg}}</h1>
-    <h1>This msg has {{msg|wordcount}} words</h1>
-    <h1>Cap first -> {{msg|capfirst}}</h1>
-    <h1>In upper case -> {{msg|upper}}</h1>
-    <h1>In lower case -> {{msg|lower}}</h1>
-    <!--operation on list jinja-->>
-    <h1>{{l|first}}</h1>
-    <h1>{{l|last}}</h1>
-    <h1>{{l|length}}</h1>
+    {% load apps_tag %}
+    {% get_date as today %}
+    <h1>Today's date is {{today}}</h1>
+    <h1>Today's date is {{today| date:"D"}}</h1>
+    
 </body>
 </html>

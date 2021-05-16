@@ -15,7 +15,7 @@ def showContact(request):
 
 def about(request):
     #s = "<h1>This is an about page</h1>"
-    l = [10,20,30]
-    data = {'msg':'this is about page of project', 'l':l}
-    res = render(request, 'testapp/about.htm', data)
+    #l = [10,20,30]
+    #data = {'msg':'this is about page of project', 'l':l}
+    res = render(request, 'testapp/about.htm')
     return res
