@@ -1,3 +1,4 @@
+from testapp.models import Employee
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
@@ -18,4 +19,11 @@ def about(request):
     #l = [10,20,30]
     data = {'msg':'this is message from views.py lol for quote filter test purpose'}
     res = render(request, 'testapp/about.htm', data)
+    return res
+
+
+def employee_info_view(request):
+    employees = Employee.objects.all()
+    data = {'employees':employees}
+    res = render(request, 'testapp/employees.htm',data)
     return res
