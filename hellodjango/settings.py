@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'BRMApp',
     'testapp',
     'exam',
+    'static',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
