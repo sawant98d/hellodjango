@@ -23,6 +23,7 @@ urlpatterns = [
     url('testapp/', include('testapp.urls')),
     url('exam/', include('exam.urls')),
     path('admin/', admin.site.urls),
+    url('BRMApp/', include('BRMApp.urls'))
     #path('home/', testapp_views.greeting),
     #path('about/', testapp_views.about),
     #path('contact/',testapp_views.showContact),

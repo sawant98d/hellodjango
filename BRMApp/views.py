@@ -3,11 +3,17 @@ from django.http.response import HttpResponse, HttpResponseRedirect
 from BRMApp.forms import NewBookForm
 from django.shortcuts import render
 from BRMApp.forms import NewBookForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from BRMApp import models
 
 # Create your views here.
 
+
+def deleteBook(request):
+    bookid = request.GET['bookid']
+    book = models.Book.objects.filter(id=bookid)
+    book.delete()
+    return   HttpResponseRedirect('/BRMApp/view-books')
 
 def edit(request):
     if request.method == 'POST':
@@ -19,7 +25,7 @@ def edit(request):
         book.author = request.data['author']
         book.publisher = request.data['publisher']
         book.save()
-    return HttpResponseRedirect('BRMApp/view-book.htm')
+    return HttpResponseRedirect('BRMApp/view-books')
 
 
 def editBook(request):
@@ -31,7 +37,7 @@ def editBook(request):
 
 def viewBooks(request):
     books = models.Book.objects.all()
-    res = render(request, 'BRMApp/view_book.htm', {'books':books})
+    res = render(request, 'BRMApp/view_books.htm', {'books':books})
     return res
 
 

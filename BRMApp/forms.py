@@ -6,5 +6,5 @@ class NewBookForm(forms.Form):
      author = forms.CharField(label='Author')
      publisher = forms.CharField(label='Publisher')
 
-class SearchForm(forms.form):
+class SearchForm(forms.Form):
     title = forms.CharField(label='Title', max_length=100)
