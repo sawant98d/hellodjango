@@ -7,6 +7,10 @@ from BRMApp.forms import NewBookForm, SearchForm
 from django.http import HttpResponse, HttpResponseRedirect
 from BRMApp import models
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
+
+
 # Create your views here.
 
 
@@ -31,24 +35,28 @@ def userLogout(request):
     logout(request)
     return HttpResponseRedirect('/BRMApp/login/')
 
+@login_required(login_url='/BRMApp/login/')
 def search(request):
     form = SearchForm(request.POST)
     books = models.Book.objects.filter(title=form.data['title'])
     res = render(request, 'BRMApp/search_book.htm',{'form':form, 'books':books})
     return res
 
-
+@login_required(login_url='/BRMApp/login/')
 def searchBook(request):
     form = SearchForm()
     res = render(request, 'BRMApp/search_book.htm', {'form':form})
     return res
 
+
+@login_required(login_url='/BRMApp/login/')
 def deleteBook(request):
     bookid = request.GET['bookid']
     book = models.Book.objects.filter(id=bookid)
     book.delete()
     return   HttpResponseRedirect('/BRMApp/view-books')
 
+@login_required(login_url='/BRMApp/login/')
 def edit(request):
     if request.method == 'POST':
         form = NewBookForm(request.POST)
@@ -61,7 +69,7 @@ def edit(request):
         book.save()
     return HttpResponseRedirect('BRMApp/view-books')
 
-
+@login_required(login_url='/BRMApp/login/')
 def editBook(request):
     book = models.Book.objects.get(id=request.GET['bookid'])
     fields = {'title':book.title, 'price':book.price, 'author':book.author, 'publisher':book.publisher}
@@ -69,17 +77,19 @@ def editBook(request):
     res = render(request, 'BRMApp/edit_book.htm',{'form':form, 'book':book})
     return res
 
+@login_required(login_url='/BRMApp/login/')
 def viewBooks(request):
     books = models.Book.objects.all()
     res = render(request, 'BRMApp/view_books.htm', {'books':books})
     return res
 
-
+@login_required(login_url='/BRMApp/login/')
 def newBook(request):
     form = NewBookForm()
     res = render(request, 'BRMApp/new_book.htm',{'form':form})
     return res
 
+@login_required(login_url='/BRMApp/login/')
 def add(request):
     if request.method == 'POST':
         form = NewBookForm(request.POST)
