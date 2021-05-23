@@ -10,5 +10,6 @@ urlpatterns = [
     url('add', views.add),
     url('search', views.search),
     url('edit',views.edit),
-
+    url('login', views.userLogin),
+    url('logout', views.userLogout),
 ]

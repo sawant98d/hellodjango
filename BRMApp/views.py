@@ -25,7 +25,7 @@ def userLogin(request):
             res = render(request, 'BRMApp/user_login.htm', data)
             return res
     else:
-        return render(request, 'BRMApp/userlogin.htm', data)
+        return render(request, 'BRMApp/user_login.htm', data)
 
 def userLogout(request):
     logout(request)
