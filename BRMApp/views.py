@@ -31,10 +31,10 @@ def edit(request):
         form = NewBookForm(request.POST)
         book = models.Book()
         book.id = request.POST['bookid']
-        book.title = request.data['title']
-        book.price = request.data['price']
-        book.author = request.data['author']
-        book.publisher = request.data['publisher']
+        book.title = form.data['title']
+        book.price = form.data['price']
+        book.author = form.data['author']
+        book.publisher = form.data['publisher']
         book.save()
     return HttpResponseRedirect('BRMApp/view-books')
 
@@ -63,7 +63,7 @@ def add(request):
         book = models.Book()
         book.title = form.data['title']
         book.price = form.data['price']
-        book.auther = form.data['auther']
+        book.author = form.data['author']
         book.publisher = form.data['publisher']
         book.save()
     s = "Record stored <br> <a href='/BRMApp/view-books'>View all books</a>"
