@@ -19,6 +19,7 @@
             <a href="/BRMApp/logout">Logout</a>              
         </div>
    </div>
+   <h2>Hello, {{username}}</h2>
    <div id="main">
         <h2>View Book Record</h2>
         <table>
@@ -38,8 +39,8 @@
                 <td><a class="btn" href="/BRMApp/delete-book?bookid={{book.id}}">Delete</a></td>
             </tr>
             {% endfor %}
-        </table>
-        
+        </table>        
    </div>
+
 </body>
 </html>
